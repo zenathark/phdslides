@@ -5,7 +5,7 @@ layout: default
 %section
   %img.logo{:src => "/img/escudo.png"}
 
-  %h4 Universidad de las Américas Puebla
+  %h4.college Universidad de las Américas Puebla
   %br/
   %h3 Models and algorithms for Image and Video Compression 
   %h4 Doctoral Thesis Defense
@@ -39,5 +39,192 @@ layout: default
 %section
   %h3 1. Introduction
 
-%section.centered
-  Data compression
+%section
+  %h4 Compression 
+  %br/
+  %ul 
+    %li Data Stream: Sequence of digitally encoded signals. 
+    %li Compression: Create a smaller representation of a given data stream reffered as compressed data stream.
+    %li Decompression: Recover the original data stream using the compressed data stream.
+
+%section
+  %h4 Usage
+  %br/
+  %ul
+    %li Reduces storage space
+    %li Improves communications speed and network usage
+
+%section
+  %h4 Challenges of compression
+  %br/
+  %ul
+    %li Find a pattern inside the data that allows to compress the data stream
+    %li Select data to be discarded withouth affecting the quality of the reconstructed data stream
+
+%section
+  %h4 Contributions
+  %ul
+    %li Proposed image compression method: Fovea Hierarchical Trees
+    %ul
+      %li Increase the compression ratio over classic methods
+      %li Improves image quality over classic methods
+      %li Based on Wavelet compression and fovea compression
+    %li Proposed video compression methods: SP-Codec and AFV-Codec
+    %ul
+      %li Based on Wavelet compression and fovea compression
+      %li Both methods increase the compression ratio over classic methods
+      %li Improve frame quality over classic methods
+
+%section
+  %h4 Publications
+  %br/
+  %ol
+    %li
+    %li
+    %li
+    %li
+    %li
+    %li
+
+%section
+  %h3 Review of Compression Algorithms
+
+%section
+  %h4 Types of compression
+  %br/
+  %ul
+    %li Lossless compression: The original data stream is fully recovered
+    %li Losy compression: The original data stream cannot be recovered. However, a new data stream is created that closely resembles the original.
+
+%section
+  %h4 Lossless compression
+  %br/
+  %ul
+    %li Exploits patterns on the data stream
+    %li Each pattern found is expressed with a symbol (Dictionary) or a magnitude (Statistical, Arithmetic)
+    %li It has a lower limit, lossless compression cannot go beyond certain ratio.
+
+%section
+  %h4 Classic lossy compression algorithms
+  %br/
+  %ul
+    %li Sound: FLAC  (Statistical)
+    %li Image: PNG (Dictionary)
+    %li Video: VP9
+
+%section
+  %h4 Lossy compression
+  %br/
+  %ul
+    %li Requires a mathematical transform that takes the data form the spatial domain to another one like frequency domain or wavelet domain.
+    %li The search for patterns are done on the transform domain.
+    %li Data is drop on the transform domain by truncating the coefficients (quantization).
+
+%section
+  %h4 Classic lossy compression algorithms
+  %br/
+  %ul
+    %li Sound: MP3  (DCT)
+    %li Image: JPEG (DCT)
+    %li Video: H.264 (iDCT)
+
+%section
+  %h3 Proposed Fovea Hierarchical Trees
+
+%section
+  %h4 Lossy image compression
+  %br/
+  %ul
+    %li Most common transform is the Discrete Cosine Transform (DCT)
+    %li The image is split on squares of 8x8 pixels. 
+    %li The transform is applied to each square and the coefficient matrix is multiplied by a quantization matrix.
+    %li The quantized coefficients are sorted and compressed using huffman encoding.
+
+%section
+  %h4 Wavelet Transform
+
+%section
+  %h4 Compression using wavelets
+
+%section
+  %h4 Fovea Compression
+  %ul
+    %li Exploits the structure of the human eye.
+    %li The human eye percieve less detail from areas further away from the fixation point 
+    %li The sensibility to details decreases logarithmically
+
+%section
+  %h4 Proposed Model: Fovea Hierarchical Trees
+
+%section
+  %h4 Fovea Window
+  %ul
+    %li Proposed fovea window
+
+%section
+  %h4 Fovea Window
+  %ul
+    %li Proposed fovea function
+
+%section
+  %h4 FVHT
+  %ul
+    %li based on SPIHT
+    %li Wavelet based method 
+    %li SPIHT reaches optimal compression
+  %h5 Wavelet zerotree
+
+%section
+  %h4 FVHT
+  %h5 Sorting Algorithm
+
+%section
+  %h4 Results
+
+%section
+  %h4 Proposed method: SP-CODEC / AFV-CODEC
+
+%section
+  %h4 Video Compression
+
+%section
+  %h4 Video Compression
+  %ul
+    %li Spatial Transform
+    %li Variable Lenght Encoder
+    %li Decompression
+    %li Motion Estimation
+    %li Motion Compensation
+
+%section
+  %h4 SP-CODEC 
+
+%section
+  %h4 SPECK
+  %ul
+    %li Wavelet Based Compression Method
+    %li Easier to implelent, less resources needed
+    %li Results with lower quality than SPIHT
+
+%section
+  %h4 AFV-CODEC 
+
+%section
+  %h4 AWFV-SPECK
+  %ul
+    %li Based on SPECK 
+    %li Sorts coefficients using fovea
+    %li Results with higher quality than SPECK inside the fovea
+
+%section
+  %h4 Adaptive Binary Arithmetic Coding
+  %ul
+    %li Arithmetic coding using integers
+    %li Creates a model on the fly
+    %li Used on H.264 (CABAC)
+  
+%section
+  %h4 Results
+
+%section 
+  %h4 Conclusions
