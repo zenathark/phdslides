@@ -3,16 +3,17 @@ layout: default
 ---
 
 %section
-  %img.logo{:src => "/img/escudo.png"}
-
+  %img.logo{:src => "/img/escudo.png", :style => "height: 160px"}
   %h4.college Universidad de las Américas Puebla
-  %br/
+  %div{:style => "height: 100px;"}
   %h3 Models and algorithms for Image and Video Compression 
-  %h4 Doctoral Thesis Defense
-  %h5 Juan C. Galan Hernández
-  %h5 Supervisor: Dr. Vicente Alarcón Aquino
   %br/
-  %h5 December 9, 2014
+  %h5 Doctoral Thesis Defense
+  %br/
+  %h4 Juan C. Galan Hernández
+  %h5 Supervisor: Dr. Vicente Alarcón Aquino
+  %div{:style => "height: 100px;"}
+  %h6 December 9, 2014
 
   %aside.notes
     Some notes
@@ -23,13 +24,13 @@ layout: default
     %li Introduction
     %li Review of Compression Algorithms
     %li 
-      Proposed Fovea Hierarchical Trees Model
+      Proposed Model: Fovea Hierarchical Trees
       %ol
         %li Proposed Approach
         %li Results
         %li Summary
     %li 
-      Proposed Adaptive Fovea Set Partitioned Embedded Coder Model
+      Proposed Models: SP-Codec/AFV-Codec
       %ol
         %li Proposed Approach
         %li Results
@@ -53,6 +54,7 @@ layout: default
   %ul
     %li Reduces storage space
     %li Improves communications speed and network usage
+    %li Impacts on all kind of communication: Wired, wireless, satellite
 
 %section
   %h4 Challenges of compression
@@ -63,6 +65,7 @@ layout: default
 
 %section
   %h4 Contributions
+  %br/
   %ul
     %li Proposed image compression method: Fovea Hierarchical Trees
     %ul
@@ -79,15 +82,15 @@ layout: default
   %h4 Publications
   %br/
   %ol
-    %li
-    %li
-    %li
-    %li
-    %li
-    %li
+    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Wavelet-Based Foveated Compression Algorithm for Real-Time Video Processing, CERMA 2010, September, 2010.
+    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, DWT Foveation-Based Multi Resolution Compression Algorithm, Resarch in Computing Science, Octoberj, 2010.
+    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, SPIHT Based Foveated Multi resolution Compression, MCPR2011, June, 2011.
+    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Fovea Window for Wavelet-based Compression, Innovations and Advances in Computer, Information, System Sciences, and Engeneering, 2013.
+    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Region-of-Interest Coding based on Fovea and Hierarchical Trees, Informatiom Tecnology and Control, September, 2013.
+    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Foveated Wavelet Based Intra Frame and Inter frame Encoding, To be submitted.
 
 %section
-  %h3 Review of Compression Algorithms
+  %h3 2. Review of Compression Algorithms
 
 %section
   %h4 Types of compression
@@ -129,7 +132,7 @@ layout: default
     %li Video: H.264 (iDCT)
 
 %section
-  %h3 Proposed Fovea Hierarchical Trees
+  %h3 Proposed Model: Fovea Hierarchical Trees
 
 %section
   %h4 Lossy image compression
@@ -142,53 +145,84 @@ layout: default
 
 %section
   %h4 Wavelet Transform
+  .image 
+    %img.logo{:src => "/img/wavelet_transform-lichtenstein.png", :style => "height: 460px"}
+  %ol
+    %li Compact Support
+    %li Good reconstruction quality
 
 %section
   %h4 Compression using wavelets
+  .image 
+    %img.logo{:src => "/img/quadtree.jpg", :style => "height: 460px"}
 
 %section
   %h4 Fovea Compression
+  %br/
   %ul
     %li Exploits the structure of the human eye.
     %li The human eye percieve less detail from areas further away from the fixation point 
     %li The sensibility to details decreases logarithmically
+  .image 
+    %img.logo{:src => "/img/eye_struct.png", :style => "height: 360px"}
 
 %section
-  %h4 Proposed Model: Fovea Hierarchical Trees
+  %h4 Fovea Hierarchical Trees
 
 %section
   %h4 Fovea Window
   %ul
     %li Proposed fovea window
-
-%section
-  %h4 Fovea Window
-  %ul
-    %li Proposed fovea function
+  .image 
+    %img.logo{:src => "/img/propfovea.png", :style => "height: 312px"}
+    %img.logo{:src => "/img/powerlaw1.png", :style => "height: 262px"}
+  :plain
+    $$w^l(n_{x,y}) =
+      \begin{cases}
+          L, & \text{if } 0 \leq n < \alpha \\
+        d\left(\frac{n^l_{x,y}-\alpha^l}{1-\alpha^l}\right)(L-b)+b,&
+          \text{if } \alpha \leq n \leq 1\\
+          b,& \text{otherwise.}
+      \end{cases} $$
 
 %section
   %h4 FVHT
+  %br/
   %ul
-    %li based on SPIHT
-    %li Wavelet based method 
+    %li Based on SPIHT
+    %li Wavelet/Fovea based method 
     %li SPIHT reaches optimal compression
-  %h5 Wavelet zerotree
 
 %section
-  %h4 FVHT
   %h5 Sorting Algorithm
-
+  %br/
+  .image 
+    %img.logo{:src => "/img/fvhtex.png", :style => "height: 450px"} 
+  %ul
+    %li Sorting from the highest level to the lowest
+    %li From the center of the fovea to the outside
+    %li From the most significant bit plane to the less significant bit plane
+    %li All zero trees are encoded as one zero
 %section
   %h4 Results
+  .image 
+    %div{:style => "width:450px; padding-top:100px; position:absolute"}
+      %img.logo{:src => "/img/spihtcamerarecon.png", :style => "height: 330px"} 
+      %p SPIHT 1bpp
+    %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
+      %img.logo{:src => "/img/fvhtcamrecon.png", :style => "height: 330px"} 
+      %p FVHT 0.06-1bpp
+
 
 %section
-  %h4 Proposed method: SP-CODEC / AFV-CODEC
+  %h4 4. Proposed method: SP-CODEC / AFV-CODEC
 
 %section
   %h4 Video Compression
 
 %section
   %h4 Video Compression
+  %br/
   %ul
     %li Spatial Transform
     %li Variable Lenght Encoder
@@ -197,13 +231,21 @@ layout: default
     %li Motion Compensation
 
 %section
+  %h4 Adaptive Binary Arithmetic Coding
+  %ul
+    %li Arithmetic coding using integers
+    %li Creates a model on the fly
+    %li Used on H.264 (CABAC)
+
+%section
   %h4 SP-CODEC 
 
 %section
   %h4 SPECK
+  %br/
   %ul
     %li Wavelet Based Compression Method
-    %li Easier to implelent, less resources needed
+    %li Easier to implement, less resources needed
     %li Results with lower quality than SPIHT
 
 %section
@@ -212,19 +254,12 @@ layout: default
 %section
   %h4 AWFV-SPECK
   %ul
-    %li Based on SPECK 
+    %li Based on SP-CODEC 
     %li Sorts coefficients using fovea
-    %li Results with higher quality than SPECK inside the fovea
-
-%section
-  %h4 Adaptive Binary Arithmetic Coding
-  %ul
-    %li Arithmetic coding using integers
-    %li Creates a model on the fly
-    %li Used on H.264 (CABAC)
+    %li Results with higher quality than SP-CODEC inside the fovea
   
 %section
   %h4 Results
 
 %section 
-  %h4 Conclusions
+  %h4 5. Conclusions
