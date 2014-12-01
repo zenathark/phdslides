@@ -82,12 +82,12 @@ layout: default
   %h4 Publications
   %br/
   %ol
-    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Wavelet-Based Foveated Compression Algorithm for Real-Time Video Processing, CERMA 2010, September, 2010.
-    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, DWT Foveation-Based Multi Resolution Compression Algorithm, Resarch in Computing Science, Octoberj, 2010.
-    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, SPIHT Based Foveated Multi resolution Compression, MCPR2011, June, 2011.
-    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Fovea Window for Wavelet-based Compression, Innovations and Advances in Computer, Information, System Sciences, and Engeneering, 2013.
-    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Region-of-Interest Coding based on Fovea and Hierarchical Trees, Informatiom Tecnology and Control, September, 2013.
-    %li J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Foveated Wavelet Based Intra Frame and Inter frame Encoding, To be submitted.
+    %li.publications J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Wavelet-Based Foveated Compression Algorithm for Real-Time Video Processing, CERMA 2010, September, 2010.
+    %li.publications J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, DWT Foveation-Based Multi Resolution Compression Algorithm, Resarch in Computing Science, Octoberj, 2010.
+    %li.publications J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, SPIHT Based Foveated Multi resolution Compression, MCPR2011, June, 2011.
+    %li.publications J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Fovea Window for Wavelet-based Compression, Innovations and Advances in Computer, Information, System Sciences, and Engeneering, 2013.
+    %li.publications J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Region-of-Interest Coding based on Fovea and Hierarchical Trees, Informatiom Tecnology and Control, September, 2013.
+    %li.publications J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Foveated Wavelet Based Intra Frame and Inter frame Encoding, To be submitted.
 
 %section
   %h3 2. Review of Compression Algorithms
@@ -197,12 +197,13 @@ layout: default
   %h5 Sorting Algorithm
   %br/
   .image 
-    %img.logo{:src => "/img/fvhtex.png", :style => "height: 450px"} 
+    %img.logo{:src => "/img/fvhtex.png", :style => "height: 300px"} 
   %ul
     %li Sorting from the highest level to the lowest
     %li From the center of the fovea to the outside
     %li From the most significant bit plane to the less significant bit plane
     %li All zero trees are encoded as one zero
+
 %section
   %h4 Results
   .image 
@@ -213,12 +214,34 @@ layout: default
       %img.logo{:src => "/img/fvhtcamrecon.png", :style => "height: 330px"} 
       %p FVHT 0.06-1bpp
 
+%section
+  %h4 Results
+  .image 
+    %div{:style => "width:450px; padding-top:100px; position:absolute"}
+      %img.logo{:src => "/img/psnrplain.png", :style => "height: 330px"} 
+      %p SPIHT 1bpp
+    %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
+      %img.logo{:src => "/img/psnrmosaic2.png", :style => "height: 330px"} 
+      %p FVHT 0.06-1bpp
+
+%section
+  %h4 Summary
+  %br/
+  %ul
+    %li The algorithm shows good performance on image reconstruction
+    %li The results obtained showed an increasing on visual quality of up to 60 psnr
+    %li The algorithm is dependent of a good choice of the focal point
+    %li The computational complexity of the algorithm is O(n)
+    %li The memory usage complexity is also O(n)
 
 %section
   %h4 4. Proposed method: SP-CODEC / AFV-CODEC
 
 %section
   %h4 Video Compression
+  %br/
+  .image 
+    %img.logo{:src => "/img/classic_framework.jpg", :style => "height: 300px"} 
 
 %section
   %h4 Video Compression
@@ -239,6 +262,9 @@ layout: default
 
 %section
   %h4 SP-CODEC 
+  %br/
+  .image 
+    %img.logo{:src => "/img/proposedspeck.png", :style => "height: 300px"} 
 
 %section
   %h4 SPECK
@@ -250,16 +276,93 @@ layout: default
 
 %section
   %h4 AFV-CODEC 
+  %br/
+  .image 
+    %img.logo{:src => "/img/proposedafvspeck.png", :style => "height: 300px"} 
 
 %section
   %h4 AWFV-SPECK
   %ul
     %li Based on SP-CODEC 
+    %li Proposed compression for spatial fransform AWFV-SECK
     %li Sorts coefficients using fovea
     %li Results with higher quality than SP-CODEC inside the fovea
   
 %section
+  %h5 Sorting Algorithm
+  %br/
+  .image 
+    %img.logo{:src => "/img/fvhtex.png", :style => "height: 300px"} 
+  %ul
+    %li Sorting from the highest level to the lowest
+    %li From the center of the fovea to the outside
+    %li From the most significant bit plane to the less significant bit plane
+    %li All zero trees are encoded as one zero
+
+%section
   %h4 Results
+  .image 
+    %div{:style => "width:450px; padding-top:100px; position:absolute"}
+      %img.logo{:src => "/img/0.png", :style => "height: 330px"} 
+      %p  Original Frame
+    %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
+      %img.logo{:src => "/img/0_h264.png", :style => "height: 330px"} 
+      %p H.264 Compression (1bpp) 
+
+%section
+  %h4 Results
+  .image 
+    %div{:style => "width:450px; padding-top:100px; position:absolute"}
+      %img.logo{:src => "/img/0_h264.png", :style => "height: 330px"} 
+      %p H.264 Compression
+    %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
+      %img.logo{:src => "/img/0_speck.png", :style => "height: 330px"} 
+      %p SP-Codec Compression (1bpp)
+
+%section
+  %h4 Results
+  .image 
+    %div{:style => "width:450px; padding-top:100px; position:absolute"}
+      %img.logo{:src => "/img/0_speck.png", :style => "height: 330px"} 
+      %p SP-Codec Compression (1bpp)
+    %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
+      %img.logo{:src => "/img/21006.png", :style => "height: 330px"} 
+      %p AFV-Codec Compression (0.06 - 1 bpp)
+
+%section
+  %h4 Results
+  .image 
+    %div{:style => "width:450px; padding-top:100px; position:absolute"}
+      %img.logo{:src => "/img/foveacomp.png", :style => "height: 330px"} 
+      %p SP-Codec Compression (1bpp)
+    %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
+      %img.logo{:src => "/img/error_mse_comp.png", :style => "height: 330px"} 
+      %p AFV-Codec Compression (0.06 - 1 bpp)
+
+%section
+  %h4 Summary
+  %br/
+  %ul
+    %li Both codecs implement a wavelet based spatial transform
+    %li The quality of the reconstruction of single frames increases the quality of the reconstructed video overall when such frames are key frames.  
+    %li The use of fovea further increases the quality on selected areas of key frames
+    %li The use of fovea will yield on a perfect reconstruction when the fixation point and the fovea cover the area where the motion is located
 
 %section 
   %h4 5. Conclusions
+  %br/
+  %ul
+    %li Two wavelet based image compression models are proposed: FVHT and AWFV-SPECK
+    %li Both algorithms exploits the fovea aliasing for increasing image quality
+    %li The proposed algorithms show better reconstruction quality that classic methods
+    %li Two video compression models are proposed: SP-Coded and AFV-Codec
+    %li Both proposed models show better quality reconstruction than classic models (H.264)
+
+%section 
+  %h4 Future Work 
+  %br/
+  %ul
+    %li The proposed models will be optimized for speed and memory usage
+    %li It will be investigated methods for inplace quantization using wavelets
+    %li Other variable length encoders will be tested
+    %li New metrics will be investigated
