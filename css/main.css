@@ -1,0 +1,73 @@
+/* line 5, ../../_sass/_typography.sass */
+.display_4 {
+  font-family: "Roboto";
+  font-size: 112px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=54);
+  opacity: 0.54;
+}
+
+/* line 10, ../../_sass/_typography.sass */
+.display_3, .reveal h3 {
+  font-family: "Roboto";
+  font-size: 56px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=54);
+  opacity: 0.54;
+}
+
+/* line 15, ../../_sass/_typography.sass */
+.display_2, .reveal h4 {
+  font-family: "Roboto";
+  font-size: 45px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=54);
+  opacity: 0.54;
+}
+
+/* line 20, ../../_sass/_typography.sass */
+.display_1, .reveal h5, .reveal li {
+  font-family: "Roboto";
+  font-size: 34px;
+  line-height: 44px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=54);
+  opacity: 0.54;
+}
+
+/* line 26, ../../_sass/_typography.sass */
+.headline, .reveal h6 {
+  font-family: "Roboto";
+  font-size: 24px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=87);
+  opacity: 0.87;
+}
+
+/* line 31, ../../_sass/_typography.sass */
+.title, .reveal .slide-number, .reveal .publications {
+  font-family: "Roboto";
+  font-size: 20px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=87);
+  opacity: 0.87;
+}
+
+/* line 16, ../../_sass/main.sass */
+.college {
+  color: #F47B20;
+}
+
+/* line 19, ../../_sass/main.sass */
+.split {
+  height: 100%;
+}
+
+/* line 25, ../../_sass/main.sass */
+.reveal li {
+  margin-bottom: 10px;
+}
+
+/* line 29, ../../_sass/main.sass */
+.reveal .image {
+  margin: 30px;
+}
+
+/* line 35, ../../_sass/main.sass */
+.nine {
+  color: #000000;
+}
