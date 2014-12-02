@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Juan Carlos Galan Hernandez">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<!-- <link rel="stylesheet" href="css/print/pdf.css"> -->
+		<link rel="stylesheet" href="css/elements.css">
+		<!-- <link rel="stylesheet" href="css/theme/default.css" id="theme"> -->
+		<link rel="stylesheet" href="css/main.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+</header>
+
+
+    <div class="reveal">
+      <div class="slides">
+        <section>
+  <img class='logo' src='/img/escudo.png' style='height: 160px'>
+  <h4 class='college'>Universidad de las Américas Puebla</h4>
+  <div style='height: 100px;'></div>
+  <h3>Models and algorithms for Image and Video Compression</h3>
+  <br>
+  <h5>Doctoral Thesis Defense</h5>
+  <br>
+  <h4>Juan C. Galan Hernández</h4>
+  <h5>Supervisor: Dr. Vicente Alarcón Aquino</h5>
+  <div style='height: 100px;'></div>
+  <h6>December 9, 2014</h6>
+  <aside class='notes'>
+    Some notes
+  </aside>
+</section>
+<section>
+  <h4>Outline</h4>
+  <ol>
+    <li>Introduction</li>
+    <li>Review of Compression Algorithms</li>
+    <li>
+      Proposed Model: Fovea Hierarchical Trees
+      <ol>
+        <li>Proposed Approach</li>
+        <li>Results</li>
+        <li>Summary</li>
+      </ol>
+    </li>
+    <li>
+      Proposed Models: SP-Codec/AFV-Codec
+      <ol>
+        <li>Proposed Approach</li>
+        <li>Results</li>
+        <li>Summary</li>
+      </ol>
+    </li>
+    <li>Conclusions and Future Work</li>
+  </ol>
+</section>
+<section>
+  <h3>1. Introduction</h3>
+</section>
+<section>
+  <h4>Compression</h4>
+  <br>
+  <ul>
+    <li>Data Stream: Sequence of digitally encoded signals.</li>
+    <li>Compression: Create a smaller representation of a given data stream referred as compressed data stream.</li>
+    <li>Decompression: Recover the original data stream using the compressed data stream.</li>
+  </ul>
+</section>
+<section>
+  <h4>Usage</h4>
+  <br>
+  <ul>
+    <li>Reduces storage space</li>
+    <li>Improves communications speed and network usage</li>
+    <li>Impacts on all kind of communication: Wired, wireless, satellite</li>
+  </ul>
+</section>
+<section>
+  <h4>Challenges of compression</h4>
+  <br>
+  <ul>
+    <li>Find a pattern inside the data that allows to compress the data stream</li>
+    <li>Select data to be discarded without affecting the quality of the reconstructed data stream</li>
+  </ul>
+</section>
+<section>
+  <h4>Contributions</h4>
+  <br>
+  <ul>
+    <li>Proposed image compression method: Fovea Hierarchical Trees</li>
+    <ul>
+      <li>Increase the compression ratio over classic methods</li>
+      <li>Improves image quality over classic methods</li>
+      <li>Based on Wavelet compression and fovea compression</li>
+    </ul>
+    <li>Proposed video compression methods: SP-Codec and AFV-Codec</li>
+    <ul>
+      <li>Based on Wavelet compression and fovea compression</li>
+      <li>Both methods increase the compression ratio over classic methods</li>
+      <li>Improve frame quality over classic methods</li>
+    </ul>
+  </ul>
+</section>
+<section>
+  <h4>Publications</h4>
+  <br>
+  <ol>
+    <li class='publications'>J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Wavelet-Based Foveated Compression Algorithm for Real-Time Video Processing, CERMA 2010, September, 2010.</li>
+    <li class='publications'>J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, DWT Foveation-Based Multi Resolution Compression Algorithm, Resarch in Computing Science, October, 2010.</li>
+    <li class='publications'>J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, SPIHT Based Foveated Multi resolution Compression, MCPR2011, June, 2011.</li>
+    <li class='publications'>J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Fovea Window for Wavelet-based Compression, Innovations and Advances in Computer, Information, System Sciences, and Engineering, 2013.</li>
+    <li class='publications'>J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Region-of-Interest Coding based on Fovea and Hierarchical Trees, Information Technology and Control, September, 2013.</li>
+    <li class='publications'>J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Foveated Wavelet Based Intra Frame and Inter frame Encoding, To be submitted.</li>
+  </ol>
+</section>
+<section>
+  <h3>2. Review of Compression Algorithms</h3>
+</section>
+<section>
+  <h4>Types of compression</h4>
+  <br>
+  <ul>
+    <li>Lossless compression: The original data stream is fully recovered</li>
+    <li>Lossy compression: The original data stream cannot be recovered. However, a new data stream is created that closely resembles the original.</li>
+  </ul>
+</section>
+<section>
+  <h4>Lossless compression</h4>
+  <br>
+  <ul>
+    <li>Exploits patterns on the data stream</li>
+    <li>Each pattern found is expressed with a symbol (Dictionary) or a magnitude (Statistical, Arithmetic)</li>
+    <li>It has a lower limit, lossless compression cannot go beyond certain ratio.</li>
+  </ul>
+</section>
+<section>
+  <h4>Classic lossy compression algorithms</h4>
+  <br>
+  <ul>
+    <li>Sound: FLAC  (Statistical)</li>
+    <li>Image: PNG (Dictionary)</li>
+    <li>Video: VP9</li>
+  </ul>
+</section>
+<section>
+  <h4>Lossy compression</h4>
+  <br>
+  <ul>
+    <li>Requires a mathematical transform that takes the data form the spatial domain to another one like frequency domain or wavelet domain.</li>
+    <li>The search for patterns are done on the transform domain.</li>
+    <li>Data is drop on the transform domain by truncating the coefficients (quantization).</li>
+  </ul>
+</section>
+<section>
+  <h4>Classic lossy compression algorithms</h4>
+  <br>
+  <ul>
+    <li>Sound: MP3  (DCT)</li>
+    <li>Image: JPEG (DCT)</li>
+    <li>Video: H.264 (iDCT)</li>
+  </ul>
+</section>
+<section>
+  <h3>Proposed Model: Fovea Hierarchical Trees</h3>
+</section>
+<section>
+  <h4>Lossy image compression</h4>
+  <br>
+  <ul>
+    <li>Most common transform is the Discrete Cosine Transform (DCT)</li>
+    <li>The image is split on squares of 8x8 pixels.</li>
+    <li>The transform is applied to each square and the coefficient matrix is multiplied by a quantization matrix.</li>
+    <li>The quantized coefficients are sorted and compressed using Huffman encoding.</li>
+  </ul>
+</section>
+<section>
+  <h4>Wavelet Transform</h4>
+  <div class='image'>
+    <img class='logo' src='/img/wavelet_transform-lichtenstein.png' style='height: 460px'>
+  </div>
+  <ol>
+    <li>Compact Support</li>
+    <li>Good reconstruction quality</li>
+  </ol>
+</section>
+<section>
+  <h4>Compression using wavelets</h4>
+  <div class='image'>
+    <img class='logo' src='/img/quadtree.jpg' style='height: 460px'>
+  </div>
+</section>
+<section>
+  <h4>Fovea Compression</h4>
+  <br>
+  <ul>
+    <li>Exploits the structure of the human eye.</li>
+    <li>The human eye perceive less detail from areas further away from the fixation point</li>
+    <li>The sensibility to details decreases logarithmically</li>
+  </ul>
+  <div class='image'>
+    <img class='logo' src='/img/eye_struct.png' style='height: 360px'>
+  </div>
+</section>
+<section>
+  <h4>Fovea Hierarchical Trees</h4>
+</section>
+<section>
+  <h4>Fovea Window</h4>
+  <ul>
+    <li>Proposed fovea window</li>
+  </ul>
+  <div class='image'>
+    <img class='logo' src='/img/propfovea.png' style='height: 312px'>
+    <img class='logo' src='/img/powerlaw1.png' style='height: 262px'>
+  </div>
+  $$w^l(n_{x,y}) =
+    \begin{cases}
+        L, & \text{if } 0 \leq n < \alpha \\
+      d\left(\frac{n^l_{x,y}-\alpha^l}{1-\alpha^l}\right)(L-b)+b,&
+        \text{if } \alpha \leq n \leq 1\\
+        b,& \text{otherwise.}
+    \end{cases} $$
+</section>
+<section>
+  <h4>FVHT</h4>
+  <br>
+  <ul>
+    <li>Based on SPIHT</li>
+    <li>Wavelet/Fovea based method</li>
+    <li>SPIHT reaches optimal compression</li>
+  </ul>
+</section>
+<section>
+  <h5>Sorting Algorithm</h5>
+  <br>
+  <div class='image'>
+    <img class='logo' src='/img/fvhtex.png' style='height: 300px'>
+  </div>
+  <ul>
+    <li>Sorting from the highest level to the lowest</li>
+    <li>From the center of the fovea to the outside</li>
+    <li>From the most significant bit plane to the less significant bit plane</li>
+    <li>All zero trees are encoded as one zero</li>
+  </ul>
+</section>
+<section>
+  <h4>Results</h4>
+  <div class='image'>
+    <div style='width:450px; padding-top:100px; position:absolute'>
+      <img class='logo' src='/img/spihtcamerarecon.png' style='height: 330px'>
+      <p>SPIHT 1bpp</p>
+    </div>
+    <div style='width:450px; padding-left:400px; padding-top:100px'>
+      <img class='logo' src='/img/fvhtcamrecon.png' style='height: 330px'>
+      <p>FVHT 0.06-1bpp</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h4>Results</h4>
+  <div class='image'>
+    <div style='width:450px; padding-top:100px; position:absolute'>
+      <img class='logo' src='/img/psnrplain.png' style='height: 330px'>
+      <p>SPIHT 1bpp</p>
+    </div>
+    <div style='width:450px; padding-left:400px; padding-top:100px'>
+      <img class='logo' src='/img/psnrmosaic2.png' style='height: 330px'>
+      <p>FVHT 0.06-1bpp</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h4>Summary</h4>
+  <br>
+  <ul>
+    <li>The algorithm shows good performance on image reconstruction</li>
+    <li>The results obtained showed an increasing on visual quality of up to 60 psnr</li>
+    <li>The algorithm is dependent of a good choice of the focal point</li>
+    <li>The computational complexity of the algorithm is O(n)</li>
+    <li>The memory usage complexity is also O(n)</li>
+  </ul>
+</section>
+<section>
+  <h4>4. Proposed method: SP-CODEC / AFV-CODEC</h4>
+</section>
+<section>
+  <h4>Video Compression</h4>
+  <br>
+  <div class='image'>
+    <img class='logo' src='/img/classic_framework.jpg' style='height: 300px'>
+  </div>
+</section>
+<section>
+  <h4>Video Compression</h4>
+  <br>
+  <ul>
+    <li>Spatial Transform</li>
+    <li>Variable Length Encoder</li>
+    <li>Decompression</li>
+    <li>Motion Estimation</li>
+    <li>Motion Compensation</li>
+  </ul>
+</section>
+<section>
+  <h4>Adaptive Binary Arithmetic Coding</h4>
+  <ul>
+    <li>Arithmetic coding using integers</li>
+    <li>Creates a model on the fly</li>
+    <li>Used on H.264 (CABAC)</li>
+  </ul>
+</section>
+<section>
+  <h4>SP-CODEC</h4>
+  <br>
+  <div class='image'>
+    <img class='logo' src='/img/proposedspeck.png' style='height: 300px'>
+  </div>
+</section>
+<section>
+  <h4>SPECK</h4>
+  <br>
+  <ul>
+    <li>Wavelet Based Compression Method</li>
+    <li>Easier to implement, less resources needed</li>
+    <li>Results with lower quality than SPIHT</li>
+  </ul>
+</section>
+<section>
+  <h4>AFV-CODEC</h4>
+  <br>
+  <div class='image'>
+    <img class='logo' src='/img/proposedafvspeck.png' style='height: 300px'>
+  </div>
+</section>
+<section>
+  <h4>AWFV-SPECK</h4>
+  <ul>
+    <li>Based on SP-CODEC</li>
+    <li>Proposed compression for spatial transform AWFV-SPECK</li>
+    <li>Sorts coefficients using fovea</li>
+    <li>Results with higher quality than SP-CODEC inside the fovea</li>
+  </ul>
+</section>
+<section>
+  <h5>Sorting Algorithm</h5>
+  <br>
+  <div class='image'>
+    <img class='logo' src='/img/awfvspeck.png' style='height: 300px'>
+  </div>
+  <ul>
+    <li>Sorting on zig-zag order from highest level to lowest</li>
+    <li>From the center of the fovea to the outside</li>
+    <li>From the most significant bit plane to the less significant bit plane</li>
+    <li>All sets where its bits are 0 are encoded using only one 0</li>
+  </ul>
+</section>
+<section>
+  <h4>Results</h4>
+  <div class='image'>
+    <div style='width:450px; padding-top:100px; position:absolute'>
+      <img class='logo' src='/img/0.png' style='height: 330px'>
+      <p>Original Frame</p>
+    </div>
+    <div style='width:450px; padding-left:400px; padding-top:100px'>
+      <img class='logo' src='/img/0_h264.png' style='height: 330px'>
+      <p>H.264 Compression (1bpp)</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h4>Results</h4>
+  <div class='image'>
+    <div style='width:450px; padding-top:100px; position:absolute'>
+      <img class='logo' src='/img/0_h264.png' style='height: 330px'>
+      <p>H.264 Compression</p>
+    </div>
+    <div style='width:450px; padding-left:400px; padding-top:100px'>
+      <img class='logo' src='/img/0_speck.png' style='height: 330px'>
+      <p>SP-Codec Compression (1bpp)</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h4>Results</h4>
+  <div class='image'>
+    <div style='width:450px; padding-top:100px; position:absolute'>
+      <img class='logo' src='/img/0_speck.png' style='height: 330px'>
+      <p>SP-Codec Compression (1bpp)</p>
+    </div>
+    <div style='width:450px; padding-left:400px; padding-top:100px'>
+      <img class='logo' src='/img/21006.png' style='height: 330px'>
+      <p>AFV-Codec Compression (0.06 - 1 bpp)</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h4>Results</h4>
+  <div class='image'>
+    <div style='width:450px; padding-top:100px; position:absolute'>
+      <img class='logo' src='/img/foveacomp.png' style='height: 330px'>
+      <p>SP-Codec Compression (1bpp)</p>
+    </div>
+    <div style='width:450px; padding-left:400px; padding-top:100px'>
+      <img class='logo' src='/img/error_mse_comp.png' style='height: 330px'>
+      <p>AFV-Codec Compression (0.06 - 1 bpp)</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h4>Summary</h4>
+  <br>
+  <ul>
+    <li>Both codecs implement a wavelet based spatial transform</li>
+    <li>The quality of the reconstruction of single frames increases the quality of the reconstructed video overall when such frames are key frames.</li>
+    <li>The use of fovea further increases the quality on selected areas of key frames</li>
+    <li>The use of fovea will yield on a perfect reconstruction when the fixation point and the fovea cover the area where the motion is located</li>
+  </ul>
+</section>
+<section>
+  <h4>5. Conclusions</h4>
+  <br>
+  <ul>
+    <li>Two wavelet based image compression models are proposed: FVHT and AWFV-SPECK</li>
+    <li>Both algorithms exploits the fovea aliasing for increasing image quality</li>
+    <li>The proposed algorithms show better reconstruction quality that classic methods</li>
+    <li>Two video compression models are proposed: SP-Coded and AFV-Codec</li>
+    <li>Both proposed models show better quality reconstruction than classic models (H.264)</li>
+  </ul>
+</section>
+<section>
+  <h4>Future Work</h4>
+  <br>
+  <ul>
+    <li>The proposed models will be optimized for speed and memory usage</li>
+    <li>It will be investigated methods for in-place quantization using wavelets</li>
+    <li>Other variable length encoders will be tested</li>
+    <li>New metrics will be investigated</li>
+  </ul>
+</section>
+<section>
+  <h3>Thank you</h3>
+</section>
+
+      </div>
+    </div>
+
+    		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+        slideNumber: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        math: {
+            mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+            config: 'TeX-AMS_HTML-full'
+        },
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/math/math.js', async: true, condition: function() { return !!document.body.classList; } },
+					//{ src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+
+			});
+
+		</script>
+
+
+  </body>
+
+</html>
