@@ -3,7 +3,7 @@ layout: default
 ---
 
 %section
-  %img.logo{:src => "/img/escudo.png", :style => "height: 160px"}
+  %img.logo{:src => "{{ site.baseurl }}/img/escudo.png", :style => "height: 160px"}
   %h4.college Universidad de las Américas Puebla
   %div{:style => "height: 100px;"}
   %h3 Models and algorithms for Image and Video Compression 
@@ -146,7 +146,7 @@ layout: default
 %section
   %h4 Wavelet Transform
   .image 
-    %img.logo{:src => "/img/wavelet_transform-lichtenstein.png", :style => "height: 460px"}
+    %img.logo{:src => "{{ site.baseurl }}/img/wavelet_transform-lichtenstein.png", :style => "height: 460px"}
   %ol
     %li Compact Support
     %li Good reconstruction quality
@@ -154,7 +154,7 @@ layout: default
 %section
   %h4 Compression using wavelets
   .image 
-    %img.logo{:src => "/img/quadtree.jpg", :style => "height: 460px"}
+    %img.logo{:src => "{{ site.baseurl }}/img/quadtree.jpg", :style => "height: 460px"}
 
 %section
   %h4 Fovea Compression
@@ -164,7 +164,7 @@ layout: default
     %li The human eye perceive less detail from areas further away from the fixation point 
     %li The sensibility to details decreases logarithmically
   .image 
-    %img.logo{:src => "/img/eye_struct.png", :style => "height: 360px"}
+    %img.logo{:src => "{{ site.baseurl }}/img/eye_struct.png", :style => "height: 360px"}
 
 %section
   %h4 Fovea Hierarchical Trees
@@ -174,8 +174,8 @@ layout: default
   %ul
     %li Proposed fovea window
   .image 
-    %img.logo{:src => "/img/propfovea.png", :style => "height: 312px"}
-    %img.logo{:src => "/img/powerlaw1.png", :style => "height: 262px"}
+    %img.logo{:src => "{{ site.baseurl }}/img/propfovea.png", :style => "height: 312px"}
+    %img.logo{:src => "{{ site.baseurl }}/img/powerlaw1.png", :style => "height: 262px"}
   :plain
     $$w^l(n_{x,y}) =
       \begin{cases}
@@ -197,7 +197,7 @@ layout: default
   %h5 Sorting Algorithm
   %br/
   .image 
-    %img.logo{:src => "/img/fvhtex.png", :style => "height: 300px"} 
+    %img.logo{:src => "{{ site.baseurl }}/img/fvhtex.png", :style => "height: 300px"} 
   %ul
     %li Sorting from the highest level to the lowest
     %li From the center of the fovea to the outside
@@ -208,20 +208,20 @@ layout: default
   %h4 Results
   .image 
     %div{:style => "width:450px; padding-top:100px; position:absolute"}
-      %img.logo{:src => "/img/spihtcamerarecon.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/spihtcamerarecon.png", :style => "height: 330px"} 
       %p SPIHT 1bpp
     %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
-      %img.logo{:src => "/img/fvhtcamrecon.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/fvhtcamrecon.png", :style => "height: 330px"} 
       %p FVHT 0.06-1bpp
 
 %section
   %h4 Results
   .image 
     %div{:style => "width:450px; padding-top:100px; position:absolute"}
-      %img.logo{:src => "/img/psnrplain.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/psnrplain.png", :style => "height: 330px"} 
       %p SPIHT 1bpp
     %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
-      %img.logo{:src => "/img/psnrmosaic2.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/psnrmosaic2.png", :style => "height: 330px"} 
       %p FVHT 0.06-1bpp
 
 %section
@@ -241,7 +241,7 @@ layout: default
   %h4 Video Compression
   %br/
   .image 
-    %img.logo{:src => "/img/classic_framework.jpg", :style => "height: 300px"} 
+    %img.logo{:src => "{{ site.baseurl }}/img/classic_framework.jpg", :style => "height: 300px"} 
 
 %section
   %h4 Video Compression
@@ -264,7 +264,7 @@ layout: default
   %h4 SP-CODEC 
   %br/
   .image 
-    %img.logo{:src => "/img/proposedspeck.png", :style => "height: 300px"} 
+    %img.logo{:src => "{{ site.baseurl }}/img/proposedspeck.png", :style => "height: 300px"} 
 
 %section
   %h4 SPECK
@@ -278,7 +278,7 @@ layout: default
   %h4 AFV-CODEC 
   %br/
   .image 
-    %img.logo{:src => "/img/proposedafvspeck.png", :style => "height: 300px"} 
+    %img.logo{:src => "{{ site.baseurl }}/img/proposedafvspeck.png", :style => "height: 300px"} 
 
 %section
   %h4 AWFV-SPECK
@@ -292,7 +292,7 @@ layout: default
   %h5 Sorting Algorithm
   %br/
   .image 
-    %img.logo{:src => "/img/awfvspeck.png", :style => "height: 300px"} 
+    %img.logo{:src => "{{ site.baseurl }}/img/awfvspeck.png", :style => "height: 300px"} 
   %ul
     %li Sorting on zig-zag order from highest level to lowest 
     %li From the center of the fovea to the outside
@@ -303,40 +303,40 @@ layout: default
   %h4 Results
   .image 
     %div{:style => "width:450px; padding-top:100px; position:absolute"}
-      %img.logo{:src => "/img/0.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/0.png", :style => "height: 330px"} 
       %p  Original Frame
     %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
-      %img.logo{:src => "/img/0_h264.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/0_h264.png", :style => "height: 330px"} 
       %p H.264 Compression (1bpp) 
 
 %section
   %h4 Results
   .image 
     %div{:style => "width:450px; padding-top:100px; position:absolute"}
-      %img.logo{:src => "/img/0_h264.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/0_h264.png", :style => "height: 330px"} 
       %p H.264 Compression
     %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
-      %img.logo{:src => "/img/0_speck.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/0_speck.png", :style => "height: 330px"} 
       %p SP-Codec Compression (1bpp)
 
 %section
   %h4 Results
   .image 
     %div{:style => "width:450px; padding-top:100px; position:absolute"}
-      %img.logo{:src => "/img/0_speck.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/0_speck.png", :style => "height: 330px"} 
       %p SP-Codec Compression (1bpp)
     %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
-      %img.logo{:src => "/img/21006.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/21006.png", :style => "height: 330px"} 
       %p AFV-Codec Compression (0.06 - 1 bpp)
 
 %section
   %h4 Results
   .image 
     %div{:style => "width:450px; padding-top:100px; position:absolute"}
-      %img.logo{:src => "/img/foveacomp.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/foveacomp.png", :style => "height: 330px"} 
       %p SP-Codec Compression (1bpp)
     %div{:style => "width:450px; padding-left:400px; padding-top:100px"}
-      %img.logo{:src => "/img/error_mse_comp.png", :style => "height: 330px"} 
+      %img.logo{:src => "{{ site.baseurl }}/img/error_mse_comp.png", :style => "height: 330px"} 
       %p AFV-Codec Compression (0.06 - 1 bpp)
 
 %section
