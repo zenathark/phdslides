@@ -15,8 +15,6 @@ layout: default
   %div{:style => "height: 100px;"}
   %h6 December 9, 2014
 
-  %aside.notes
-    Some notes
 
 %section
   %h4 Outline
@@ -37,6 +35,9 @@ layout: default
         %li Summary
     %li Conclusions and Future Work
 
+  %aside.notes
+    This is the agenda for my speech. First i will
+
 %section
   %h3 1. Introduction
 
@@ -45,8 +46,13 @@ layout: default
   %br/
   %ul 
     %li Data Stream: Sequence of digitally encoded signals. 
-    %li Compression: Create a smaller representation of a given data stream referred as compressed data stream.
+    %li Compression: Create a smaller representation of a given data stream. This new smaller data stream referred as compressed data stream.
     %li Decompression: Recover the original data stream using the compressed data stream.
+
+  %aside.notes  
+    Let me define first what is a data stream. A data stream is a sequence of digitally encoded signals. This 
+    meaans that a data stream is a set of discrete values. Such values are usually the magnitude of a signal
+    on a given moment, but can be something else such a string of symbols.
 
 %section
   %h4 Usage
@@ -56,12 +62,21 @@ layout: default
     %li Improves communications speed and network usage
     %li Impacts on all kind of communication: Wired, wireless, satellite
 
+  %aside.notes
+    The main uses for data compression are to, this allows to improve. 
+    The imapct os on all.
+
 %section
   %h4 Challenges of compression
   %br/
   %ul
     %li Find a pattern inside the data that allows to compress the data stream
     %li Select data to be discarded without affecting the quality of the reconstructed data stream
+
+  %aside.notes
+    What are the challenges for compression?. Finding an indeal patter allows to low compression ratios, however
+    each data stream can has a different pattern. For lossy compression, select.. is extremly importan
+    in order to reach good quality and small compressed data streams.
 
 %section
   %h4 Contributions
@@ -78,6 +93,10 @@ layout: default
       %li Both methods increase the compression ratio over classic methods
       %li Improve frame quality over classic methods
 
+    %aside.notes
+      In this work, two models for compression are proposed . The first oone is FVHT aimed to image compression
+      The second proposal is two video compression models, SPECK codec and Adaptive Fovea Codec
+
 %section
   %h4 Publications
   %br/
@@ -88,6 +107,9 @@ layout: default
     %li.publications J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Fovea Window for Wavelet-based Compression, Innovations and Advances in Computer, Information, System Sciences, and Engineering, 2013.
     %li.publications J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Region-of-Interest Coding based on Fovea and Hierarchical Trees, Information Technology and Control, September, 2013.
     %li.publications J.C. Galan-Hernandez, V. Alarcon-Aquino, O. Starostenko and J.M. Ramirez-Cortes, Foveated Wavelet Based Intra Frame and Inter frame Encoding, To be submitted.
+
+    %aside.notes
+      The proposed methods were reported on the followng papers
 
 %section
   %h3 2. Review of Compression Algorithms
